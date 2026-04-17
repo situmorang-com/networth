@@ -1,0 +1,16 @@
+{
+  "name": "accelerasia-proposal",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "build:accelerasia": "SITE_URL=https://edmund.link SITE_BASE_PATH=/accelerasia astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^6.1.7"
+  }
+}

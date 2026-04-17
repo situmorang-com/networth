@@ -1,0 +1,471 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const leadershipPlatforms = [
+  {
+    title: "Executive Technology Leadership",
+    text: "Group CTO experience across large companies."
+  },
+  {
+    title: "AI Thought Leadership",
+    text: "Keynotes and strategy on AI, data science, and transformation."
+  },
+  {
+    title: "Cybersecurity Perspective",
+    text: "Practical leadership on cyber risk, resilience, and trust."
+  },
+  {
+    title: "Regional Network Capital",
+    text: "Trusted access across Indonesia and Southeast Asia."
+  }
+];
+
+const operatingLanes = [
+  {
+    step: "01",
+    name: "Technology Strategy",
+    detail: "Transformation, AI, architecture, and modernization."
+  },
+  {
+    step: "02",
+    name: "Executive Access",
+    detail: "Open doors to leaders, buyers, and strategic partners."
+  },
+  {
+    step: "03",
+    name: "Growth Activation",
+    detail: "Turn trust into partnerships, traction, and momentum."
+  }
+];
+
+const gtmFormats = [
+  "Executive roundtables",
+  "Private C-level dinners",
+  "Bali leadership retreats",
+  "Strategic introductions",
+  "Partner ecosystem activation",
+  "Enterprise relationship building"
+];
+
+const companyFootprint = [
+  {
+    name: "MD CORP / MD Entertainment",
+    tag: "Media & entertainment",
+    detail: "A leading Indonesian content and entertainment group spanning film, TV, OTT, music, animation, and new distribution platforms."
+  },
+  {
+    name: "Sinarmas Mining",
+    tag: "Mining & energy",
+    detail: "Mining and energy holding ecosystem within the Sinar Mas group, with operations and subsidiaries across the sector."
+  },
+  {
+    name: "PT BUMI Resources Tbk",
+    tag: "Resources & mining",
+    detail: "One of Indonesia’s major mining groups, with coal and minerals businesses and publicly listed operations."
+  },
+  {
+    name: "BCA Life",
+    tag: "Insurance & financial services",
+    detail: "A life insurance company in the BCA group, serving retail and corporate markets through multiple channels."
+  },
+  {
+    name: "MNC Life",
+    tag: "Insurance & media ecosystem",
+    detail: "Part of the wider MNC group, linking insurance operations with one of Indonesia’s major business ecosystems."
+  },
+  {
+    name: "Asian Bulk Logistics",
+    tag: "Logistics",
+    detail: "Industrial and logistics operations where technology can directly improve safety, efficiency, and visibility."
+  }
+];
+
+const publicNetwork = [
+  "MD Entertainment / MD Pictures",
+  "Sinar Mas ecosystem",
+  "BUMI Resources",
+  "BCA / BCA Life",
+  "MNC Group / MNC Life",
+  "Fintech and AI founders",
+  "Enterprise technology leaders",
+  "Regional investors and operators"
+];
+
+const credibilityPoints = [
+  "Group CTO across major organizations.",
+  "Thought leader in AI, cybersecurity, and data science.",
+  "My net worth is my network.",
+  "I invest in people.",
+  "Technology depth plus trusted access."
+];
+
+const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
+---
+
+<BaseLayout
+  title="Edmund Situmorang"
+  description="A high-tech single-page profile for Edmund Situmorang, centered on group CTO leadership, executive access, and relationship-led growth across Indonesia and Southeast Asia."
+>
+  <main class="page-shell">
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="aurora aurora-a"></div>
+    <div class="aurora aurora-b"></div>
+    <div class="noise"></div>
+
+    <section class="hero section">
+      <div class="topbar fade-in">
+        <div class="eyebrow">Collaboration concept</div>
+        <a href="#contact" class="micro-link">Open a strategic conversation</a>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy fade-in" data-stagger="0">
+          <p class="kicker">Edmund Situmorang</p>
+          <h1 class="hero-title">
+            <span>Group CTO.</span>
+            <span>Connector. Builder.</span>
+          </h1>
+          <p class="lede">
+            CTO, thought leader in AI, cybersecurity, and data science, with executive access across Indonesia and Southeast Asia.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#strategy" class="button button-primary">View strategy</a>
+            <a href="#formats" class="button button-secondary">See activation formats</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel fade-in" data-stagger="1">
+          <div class="stage-panel">
+            <img
+              src={techPortrait}
+              alt="Edmund Situmorang high-tech portrait"
+              class="portrait-image"
+            />
+            <div class="portrait-shade"></div>
+            <div class="stage-grid"></div>
+            <div class="stage-sweep"></div>
+            <div class="stage-orbit orbit-a"></div>
+            <div class="stage-orbit orbit-b"></div>
+            <div class="stage-orbit orbit-c"></div>
+            <div class="stage-beam beam-a"></div>
+            <div class="stage-beam beam-b"></div>
+            <div class="stage-node node-core">
+              <span class="node-label">Leadership</span>
+              <strong>CTO</strong>
+            </div>
+            <div class="stage-node node-bali">
+              <span class="node-label">Network</span>
+              <strong>C-Suite</strong>
+            </div>
+            <div class="stage-node node-sea">
+              <span class="node-label">Reach</span>
+              <strong>SEA</strong>
+            </div>
+            <div class="portrait-badge badge-a">
+              <span>Profile</span>
+              <strong>Group CTO</strong>
+            </div>
+            <div class="portrait-badge badge-b">
+              <span>Approach</span>
+              <strong>Invest in people</strong>
+            </div>
+          </div>
+          <div class="signal-card">
+            <span class="signal-label">Positioning</span>
+            <strong>Technology leader with market access leverage</strong>
+            <p>
+              Group CTO perspective with strong executive relationships.
+            </p>
+          </div>
+          <div class="signal-card">
+            <span class="signal-label">Core belief</span>
+            <strong>My net worth is my network.</strong>
+            <p>
+              I invest in people, trust, and long-term relationships.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero-metrics fade-in" data-stagger="2">
+        <div class="metric">
+          <span>Leadership stance</span>
+          <strong>Technology must move the business.</strong>
+        </div>
+        <div class="metric">
+          <span>Thought leadership</span>
+          <strong>AI, cybersecurity, and digital transformation.</strong>
+        </div>
+        <div class="metric">
+          <span>Operating model</span>
+          <strong>Strategy, access, and activation.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="strategy">
+      <div class="section-heading">
+        <p class="section-tag">Leadership profile</p>
+        <h2>What I do.</h2>
+      </div>
+
+      <div class="content-grid">
+        <div class="card card-large">
+          <h3>Core position</h3>
+          <ul class="clean-list">
+            <li>Lead technology at group and enterprise scale.</li>
+            <li>Translate strategy into execution.</li>
+            <li>Open the right rooms with the right people.</li>
+            <li>Create momentum through trusted relationships.</li>
+          </ul>
+        </div>
+        <div class="card quote-card">
+          <p class="quote">“I invest in people.”</p>
+          <p class="quote-context">That is the strategy behind the network.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="section-tag">Bio</p>
+        <h2>How I am positioned.</h2>
+      </div>
+
+      <div class="content-grid">
+        <div class="card card-large">
+          <h3>Profile</h3>
+          <p>
+            Edmund Situmorang is the Chief Technology Officer of TransMetaTek, with over 17 years of
+            leadership experience across banking, insurtech, logistics, mining, and retail.
+          </p>
+          <p>
+            He is an award-winning innovator and frequent keynote speaker, sharing insights on AI,
+            cybersecurity, data science, and digital transformation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Recognition</h3>
+          <ul class="clean-list">
+            <li>Economic Times Transformative CIO Award 2022</li>
+            <li>Chief AI of the Year 2025, Malaysia</li>
+            <li>CIO 100 Award 2025 by Foundry (PC Magazine)</li>
+            <li>CIO FORUM Global Award 2024 in South Africa</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="formats">
+      <div class="section-heading">
+        <p class="section-tag">Capabilities</p>
+        <h2>What I bring.</h2>
+      </div>
+
+      <div class="card-grid">
+        {
+          leadershipPlatforms.map((item, index) => (
+            <article class="card format-card" style={`--delay:${index};`}>
+              <p class="card-index">0{index + 1}</p>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="section-tag">GTM</p>
+        <h2>How I create momentum.</h2>
+      </div>
+
+      <div class="gtm-grid">
+        {
+          gtmFormats.map((item, index) => (
+            <article class="gtm-pill">
+              <span>0{index + 1}</span>
+              <strong>{item}</strong>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="section-tag">Operating lanes</p>
+        <h2>How I work.</h2>
+      </div>
+
+      <div class="timeline">
+        {
+          operatingLanes.map((phase) => (
+            <article class="timeline-item">
+              <div class="timeline-step">{phase.step}</div>
+              <div class="timeline-copy">
+                <h3>{phase.name}</h3>
+                <p>{phase.detail}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="section-tag">Company footprint</p>
+        <h2>Where I have worked.</h2>
+      </div>
+
+      <div class="company-grid">
+        {
+          companyFootprint.map((item, index) => (
+            <article class="card company-card" style={`--delay:${index};`}>
+              <p class="card-index">0{index + 1}</p>
+              <h3>{item.name}</h3>
+              <p class="company-tag">{item.tag}</p>
+              <p>{item.detail}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="section-tag">Public network</p>
+        <h2>Who I am close to.</h2>
+      </div>
+
+      <div class="network-grid">
+        {
+          publicNetwork.map((item) => (
+            <article class="network-chip">
+              <strong>{item}</strong>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="section-tag">Why it matters</p>
+        <h2>Why this matters.</h2>
+      </div>
+
+      <div class="split-panel">
+        <div class="card manifesto-card">
+          <h3>The idea</h3>
+          <p>
+            Strong technology leadership is more valuable when it comes with trust, access, and the ability to
+            convene decision-makers.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What I bring</h3>
+          <ul class="clean-list">
+            <li>Senior technology leadership.</li>
+            <li>Executive network and market access.</li>
+            <li>Curated formats that create serious conversations.</li>
+            <li>Relationship-led growth and transformation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="section-tag">Credibility</p>
+        <h2>In one glance.</h2>
+      </div>
+
+      <div class="proof-list">
+        {
+          credibilityPoints.map((item) => (
+            <article class="proof-item">
+              <span class="proof-dot"></span>
+              <p>{item}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section reveal contact-section" id="contact">
+      <div class="contact-shell">
+        <div>
+          <p class="section-tag">Next move</p>
+          <h2>Let’s build something meaningful.</h2>
+        </div>
+
+        <div class="contact-copy">
+          <p>
+            A clear profile for partners, executives, investors, and companies who need both senior technology
+            leadership and trusted access.
+          </p>
+          <a class="button button-primary" href="mailto:hello@example.com?subject=Strategic%20conversation">
+            Start the conversation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+    const hero = document.querySelector(".hero");
+    const shell = document.querySelector(".page-shell");
+
+    if (hero && shell) {
+      hero.addEventListener("pointermove", (event) => {
+        const rect = hero.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 18;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * 18;
+        shell.style.setProperty("--pointer-x", `${x}px`);
+        shell.style.setProperty("--pointer-y", `${y}px`);
+      });
+    }
+
+    const grid = document.querySelector(".stage-grid");
+
+    if (grid) {
+      let offset = 0;
+
+      const animateGrid = () => {
+        offset = (offset + 0.35) % 100;
+        grid.style.setProperty("--grid-shift", `${offset}px`);
+        requestAnimationFrame(animateGrid);
+      };
+
+      animateGrid();
+    }
+
+    const updateScrollProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+      document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(3));
+    };
+
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+  </script>
+</BaseLayout>

@@ -99,7 +99,9 @@ const credibilityPoints = [
   "Technology depth plus trusted access."
 ];
 
-const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
+const base = (import.meta.env.BASE_URL ?? "/").replace(/\/$/, "");
+const techPortraitWebP = `${base}/edmund-tech-portrait.webp`;
+const techPortraitPNG  = `${base}/edmund-tech-portrait-opt.png`;
 ---
 
 <BaseLayout
@@ -115,7 +117,7 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
     <section class="hero section">
       <div class="topbar fade-in">
         <div class="eyebrow">Collaboration concept</div>
-        <a href="#contact" class="micro-link">Open a strategic conversation</a>
+        <div class="eyebrow-spacer"></div>
       </div>
 
       <div class="hero-grid">
@@ -126,7 +128,7 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
             <span>Connector. Builder.</span>
           </h1>
           <p class="lede">
-            CTO, thought leader in AI, cybersecurity, and data science, with executive access across Indonesia and Southeast Asia.
+            The CTO that global technology companies were trying to reach — now on your side of the table. Thought leader in AI, cybersecurity, and digital transformation. Peer-level access across Indonesia, Singapore, Malaysia, and the Philippines.
           </p>
 
           <div class="hero-actions">
@@ -137,11 +139,18 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
 
         <aside class="hero-panel fade-in" data-stagger="1">
           <div class="stage-panel">
-            <img
-              src={techPortrait}
-              alt="Edmund Situmorang high-tech portrait"
-              class="portrait-image"
-            />
+            <picture>
+              <source srcset={techPortraitWebP} type="image/webp" />
+              <img
+                src={techPortraitPNG}
+                alt="Edmund Situmorang high-tech portrait"
+                class="portrait-image"
+                loading="eager"
+                decoding="async"
+                width="900"
+                height="1350"
+              />
+            </picture>
             <div class="portrait-shade"></div>
             <div class="stage-grid"></div>
             <div class="stage-sweep"></div>
@@ -151,8 +160,8 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
             <div class="stage-beam beam-a"></div>
             <div class="stage-beam beam-b"></div>
             <div class="stage-node node-core">
-              <span class="node-label">Leadership</span>
-              <strong>CTO</strong>
+              <span class="node-label">Thought Leadership</span>
+              <strong>AI & Cybersecurity</strong>
             </div>
             <div class="stage-node node-bali">
               <span class="node-label">Network</span>
@@ -255,6 +264,96 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
             <li>CIO FORUM Global Award 2024 in South Africa</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="barrier">
+      <div class="section-heading">
+        <p class="section-tag">Market intelligence</p>
+        <h2>They lose because they don't understand the market.</h2>
+      </div>
+
+      <div class="manifesto-block">
+
+        <div class="card manifesto-lead">
+          <p class="manifesto-statement">
+            After 15+ years inside Indonesia's largest conglomerates — Sinarmas, MNC Group, and
+            BCA Group — one truth is undeniable: global tech companies don't lose in Indonesia
+            because of their product. They lose because they don't understand the market.
+          </p>
+        </div>
+
+        <div class="market-stats-row">
+          <div class="market-stat">
+            <strong data-count="270" data-suffix="M+">270M+</strong>
+            <span>Population — 4th largest in the world</span>
+          </div>
+          <div class="market-stat">
+            <strong data-count="15" data-suffix="+ yrs">15+ yrs</strong>
+            <span>C-suite inside Indonesia's largest conglomerates</span>
+          </div>
+          <div class="market-stat">
+            <strong data-count="10" data-suffix="+ awards">10+ awards</strong>
+            <span>International recognition in AI & technology leadership</span>
+          </div>
+          <div class="market-stat">
+            <strong data-count="4">4</strong>
+            <span>Countries with active C-suite networks — ID, SG, MY, PH</span>
+          </div>
+        </div>
+
+        <div class="manifesto-body">
+          <div class="card">
+            <h3>The structure of decision-making.</h3>
+            <p>
+              Enterprise adoption in Indonesia is not driven by product superiority alone. It is
+              driven by trust, relationships, and the ability to navigate multi-layered
+              organizations where a single group can span multiple industries.
+            </p>
+            <p>
+              I have seen this pattern repeatedly from the inside. The technologies that succeed
+              are not always the most advanced. They are the ones that are positioned correctly,
+              understood locally, and championed internally.
+            </p>
+            <p>
+              Yet many global SaaS and technology players still approach Indonesia as a secondary
+              market. That assumption is costly.
+            </p>
+          </div>
+
+          <div class="card manifesto-close-card">
+            <p class="gap-label">The gap is not technical. It is contextual.</p>
+            <ul class="gap-list">
+              <li>
+                <span class="gap-dot"></span>
+                Do you understand how decisions are actually made?
+              </li>
+              <li>
+                <span class="gap-dot"></span>
+                Can you engage leadership as a peer — not a vendor?
+              </li>
+              <li>
+                <span class="gap-dot"></span>
+                Are you aligned with both business priorities and local execution realities?
+              </li>
+            </ul>
+            <p class="manifesto-closer">
+              That is where most global companies struggle. And that is the gap I focus on closing.
+            </p>
+          </div>
+        </div>
+
+        <div class="card manifesto-cta-card">
+          <p class="manifesto-cta-text">
+            If Indonesia — or broader APAC — is part of your strategic roadmap, I'm happy to
+            share perspective from the ground.
+          </p>
+          <p class="manifesto-cta-sub">
+            Because in this market, insight is not optional. It's the difference between traction
+            and stagnation.
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -363,18 +462,19 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
         <div class="card manifesto-card">
           <h3>The idea</h3>
           <p>
-            Strong technology leadership is more valuable when it comes with trust, access, and the ability to
-            convene decision-makers.
+            I have spent 15 years as the buyer that global technology companies could not reach.
+            Now I open those doors — as a peer, in-language, with the technical credibility to move
+            the conversation from the first meeting to a signed agreement.
           </p>
         </div>
 
         <div class="card">
           <h3>What I bring</h3>
           <ul class="clean-list">
-            <li>Senior technology leadership.</li>
-            <li>Executive network and market access.</li>
-            <li>Curated formats that create serious conversations.</li>
-            <li>Relationship-led growth and transformation.</li>
+            <li>15 years of C-suite peer relationships across Indonesia's largest conglomerates.</li>
+            <li>Technical fluency in AI, cybersecurity, and digital transformation — spoken in the room, in Bahasa Indonesia.</li>
+            <li>The buy-side perspective: I know what Indonesian CTOs need to hear to move forward.</li>
+            <li>Relationship-led enterprise growth that competitors cannot replicate on any timeline.</li>
           </ul>
         </div>
       </div>
@@ -410,16 +510,39 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
             A clear profile for partners, executives, investors, and companies who need both senior technology
             leadership and trusted access.
           </p>
-          <a class="button button-primary" href="mailto:hello@example.com?subject=Strategic%20conversation">
+          <a
+            class="button button-primary"
+            href="https://wa.me/6282122887770?text=Hi%20Edmund%2C%20I%20came%20across%20your%20profile%20and%20would%20love%20to%20start%20a%20strategic%20conversation."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Start the conversation
           </a>
         </div>
       </div>
     </section>
+
+    <a
+      class="float-connect"
+      href="https://wa.me/6282122887770?text=Hi%20Edmund%2C%20I%20came%20across%20your%20profile%20and%20would%20love%20to%20start%20a%20strategic%20conversation."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Connect on WhatsApp"
+    >
+      <svg class="float-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span class="float-label">Let's connect</span>
+    </a>
   </main>
 
   <script>
-    const observer = new IntersectionObserver(
+    /* ── 0. DEVICE DETECTION ─────────────────────────────────────── */
+    const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    const isMobile = window.innerWidth <= 768;
+
+    /* ── 1. REVEAL ON SCROLL ─────────────────────────────────────── */
+    const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -429,43 +552,178 @@ const techPortrait = `${Astro.base}edmund-tech-portrait.png`;
       },
       { threshold: 0.18 }
     );
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-
+    /* ── 2. HERO PARALLAX POINTER — desktop only ────────────────── */
     const hero = document.querySelector(".hero");
     const shell = document.querySelector(".page-shell");
-
-    if (hero && shell) {
-      hero.addEventListener("pointermove", (event) => {
+    if (hero && shell && !isTouch) {
+      hero.addEventListener("pointermove", (e) => {
         const rect = hero.getBoundingClientRect();
-        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 18;
-        const y = ((event.clientY - rect.top) / rect.height - 0.5) * 18;
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 18;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 18;
         shell.style.setProperty("--pointer-x", `${x}px`);
         shell.style.setProperty("--pointer-y", `${y}px`);
       });
     }
 
+    /* ── 3. STAGE GRID DRIFT ─────────────────────────────────────── */
     const grid = document.querySelector(".stage-grid");
-
     if (grid) {
       let offset = 0;
-
       const animateGrid = () => {
         offset = (offset + 0.35) % 100;
         grid.style.setProperty("--grid-shift", `${offset}px`);
         requestAnimationFrame(animateGrid);
       };
-
       animateGrid();
     }
 
+    /* ── 4. SCROLL PROGRESS BAR ──────────────────────────────────── */
     const updateScrollProgress = () => {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
       document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(3));
     };
-
     updateScrollProgress();
     window.addEventListener("scroll", updateScrollProgress, { passive: true });
+
+    /* ── 5. TYPEWRITER — hero lede ───────────────────────────────── */
+    const lede = document.querySelector(".lede");
+    if (lede) {
+      const full = lede.textContent.trim();
+      lede.textContent = "";
+      lede.style.opacity = "1";
+      lede.style.transform = "none";
+      let i = 0;
+      const cursor = document.createElement("span");
+      cursor.className = "type-cursor";
+      cursor.textContent = "|";
+      lede.appendChild(cursor);
+      const type = () => {
+        if (i < full.length) {
+          cursor.insertAdjacentText("beforebegin", full[i++]);
+          setTimeout(type, i < 60 ? 28 : 18);
+        } else {
+          setTimeout(() => cursor.remove(), 1800);
+        }
+      };
+      setTimeout(type, 900);
+    }
+
+    /* ── 6. TEXT SCRAMBLE — section h2 on reveal ─────────────────── */
+    const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&!?";
+    function scramble(el) {
+      const original = el.textContent;
+      let frame = 0;
+      const totalFrames = 18;
+      const tick = () => {
+        el.textContent = original
+          .split("")
+          .map((ch, idx) => {
+            if (ch === " ") return " ";
+            if (idx < Math.floor((frame / totalFrames) * original.length)) return original[idx];
+            return CHARS[Math.floor(Math.random() * CHARS.length)];
+          })
+          .join("");
+        if (frame < totalFrames) {
+          frame++;
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = original;
+        }
+      };
+      requestAnimationFrame(tick);
+    }
+
+    const scrambleObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const h2 = entry.target.querySelector("h2");
+            if (h2) scramble(h2);
+            scrambleObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    document.querySelectorAll(".section-heading").forEach((el) => scrambleObserver.observe(el));
+
+    /* ── 7. COUNTER — market stat numbers ───────────────────────── */
+    function animateCounter(el) {
+      const raw = el.getAttribute("data-count");
+      if (!raw) return;
+      const target = parseFloat(raw);
+      const suffix = el.getAttribute("data-suffix") ?? "";
+      const prefix = el.getAttribute("data-prefix") ?? "";
+      const isFloat = raw.includes(".");
+      const duration = 1600;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = eased * target;
+        el.textContent = prefix + (isFloat ? val.toFixed(1) : Math.floor(val).toLocaleString()) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll("[data-count]").forEach(animateCounter);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    document.querySelectorAll(".market-stats-row").forEach((el) => counterObserver.observe(el));
+
+    /* ── 8. 3D CARD TILT — desktop/pointer only ─────────────────── */
+    if (!isTouch) {
+      const tiltEls = document.querySelectorAll(".card, .metric, .gtm-pill, .network-chip");
+      tiltEls.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `perspective(700px) rotateX(${-y * 9}deg) rotateY(${x * 9}deg) translateY(-5px) scale(1.02)`;
+          card.style.transition = "transform 80ms linear, border-color 220ms ease, box-shadow 220ms ease";
+        });
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "";
+          card.style.transition = "transform 400ms ease, border-color 220ms ease, box-shadow 220ms ease";
+        });
+      });
+    }
+
+    /* ── 9. GLITCH — hero title periodic flicker ─────────────────── */
+    const heroTitle = document.querySelector(".hero-title");
+    if (heroTitle) {
+      const glitch = () => {
+        heroTitle.classList.add("is-glitching");
+        setTimeout(() => heroTitle.classList.remove("is-glitching"), 400);
+        setTimeout(glitch, 4000 + Math.random() * 6000);
+      };
+      setTimeout(glitch, 3000);
+    }
+
+    /* ── 10. SCAN LINE — desktop only ────────────────────────────── */
+    if (!isTouch) {
+      const scanLine = document.createElement("div");
+      scanLine.className = "scan-line";
+      document.querySelector(".page-shell")?.appendChild(scanLine);
+      const runScan = () => {
+        scanLine.classList.remove("scan-active");
+        void scanLine.offsetWidth;
+        scanLine.classList.add("scan-active");
+        setTimeout(runScan, 6000 + Math.random() * 8000);
+      };
+      setTimeout(runScan, 2000);
+    }
   </script>
 </BaseLayout>

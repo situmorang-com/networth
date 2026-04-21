@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "build:accelerasia": "SITE_URL=https://edmund.link SITE_BASE_PATH=/accelerasia astro build",
+    "build:net": "SITE_URL=https://net.edmund.link SITE_BASE_PATH=/ astro build",
     "preview": "astro preview"
   },
   "dependencies": {

@@ -1,45 +1,64 @@
-# Deploy to Coolify
+# Deploy to net.edmund.link
 
 Target URL:
 
-`https://edmund.link/accelerasia`
+`https://net.edmund.link`
 
-## Coolify
+---
 
-Use this project as a static Astro site.
+## 1. Cloudflare DNS
 
-Build command:
+In your Cloudflare dashboard for `edmund.link`:
 
-```bash
-npm install && npm run build:accelerasia
-```
+1. Go to **DNS → Records**
+2. Add a new record:
+   - **Type:** `CNAME`
+   - **Name:** `net`
+   - **Target:** *(your Coolify server hostname or IP — same as `edmund.link` points to)*
+   - **Proxy status:** Proxied (orange cloud) ✅
+3. Save
 
-Publish directory:
+> If Coolify uses an IP address, use an **A record** instead:
+> - **Type:** `A` | **Name:** `net` | **IPv4:** `<your server IP>`
 
-```bash
-dist
-```
+---
 
-If you prefer environment variables instead of the preset build script, use:
+## 2. Coolify — New Application
 
-```bash
-SITE_URL=https://edmund.link
-SITE_BASE_PATH=/accelerasia
-```
+In Coolify, create a **new application** for this subdomain:
 
-Then the build command can stay:
+1. **Source:** Same Git repo
+2. **Build command:**
+   ```
+   npm install && npm run build:net
+   ```
+3. **Publish directory:** `dist`
+4. **Domain:** `net.edmund.link`
+5. Enable **HTTPS / Let's Encrypt** in Coolify settings
 
-```bash
-npm install && npm run build
-```
+> Or use environment variables instead of the build script:
+> ```
+> SITE_URL=https://net.edmund.link
+> SITE_BASE_PATH=/
+> ```
+> Build command: `npm install && npm run build`
 
-## Cloudflare
+---
 
-Point `edmund.link` to the Coolify server.
+## 3. Deploy
 
-DNS does not control the `/accelerasia` path. The path routing must be handled by Coolify / your reverse proxy on the server.
+Push or trigger a build in Coolify. Once DNS propagates (usually 1–5 minutes with Cloudflare), the site will be live at:
+
+**https://net.edmund.link**
+
+---
+
+## Previous deployment (still active)
+
+`https://edmund.link/accelerasia` — managed separately in Coolify.
 
 ## Notes
 
-- `https://edmund.link/accelerasia` is supported by the Astro config in this repo.
-- If `edmund.link` already serves another app at `/`, make sure Coolify is configured to route `/accelerasia` to this app.
+- `net.edmund.link` uses base path `/` — no path prefix needed
+- SSL is handled automatically by Coolify + Let's Encrypt
+- Cloudflare proxy adds CDN, DDoS protection, and caching on top
